@@ -1,0 +1,18 @@
+{% extends "plan/layout.html" %}
+
+{% block content %}
+
+{% for post in plan_list %}
+    {% if post.author == user %}
+        <a href = "{% url "plan:detail" post.pk %}">
+        {{post.author}}-
+        {{post.title}} </a>
+        <br/>
+    {% endif %}
+{% endfor %}
+
+<br/>
+<br/>
+<a href = "{% url "plan:newplan" %}"> 새 계획 만들기 </a>
+
+{% endblock %}

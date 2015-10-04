@@ -1,0 +1,29 @@
+{% extends "plan/layout.html" %}
+
+{% block content %}
+
+{% for post in plan_list %}
+
+    <a href = "{% url "plan:detail" post.pk %}">
+
+
+        {% if post.image %}
+
+                                <img class="media-object" src="{{ post.image.url }}" alt="{{ post.title }}" />
+                            {% else %}
+                                 <img class="media-object img-rounded" src="http://lorempixel.com/287/176/cats/" alt="랜덤 이미지" />
+                            {% endif %}
+
+                            <hr/>
+
+        {{post.author}}-
+        {{post.title}} </a>
+        <br/>
+
+{% endfor %}
+
+<br/>
+<br/>
+<a href = "{% url "plan:newplan" %}"> 새 계획 만들기 </a>
+
+{% endblock %}

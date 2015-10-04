@@ -1,0 +1,12 @@
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <table>
+        {{form}}
+    </table>
+
+    <input type = "submit" value="등록">
+
+</form>

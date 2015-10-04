@@ -1,0 +1,13 @@
+{% extends "plan/layout.html" %}
+
+{% block content %}
+
+    {% for tr in post.transits.all %}
+        {{tr}} - {{tr.cost}} <br>
+    {% endfor %}
+
+    <h3>총액 : {{sum}} <br/> </h3>
+    <br/>
+    <a href="{% url "plan:add_transit" post.pk%}">새 경비 추가하기</a>
+    <br/>
+{% endblock %}
